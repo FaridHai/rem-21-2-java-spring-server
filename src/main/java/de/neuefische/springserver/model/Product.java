@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Product {
 
     @NotBlank(message="Name not null!")
-    @Size(min=2)
+    @Size(min=2, message="Name must be have atleast 2 Characters!")
     private String name;
     @NotBlank(message="Id not null!")
     private String id;
