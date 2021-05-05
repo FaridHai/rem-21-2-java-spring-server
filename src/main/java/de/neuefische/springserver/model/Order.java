@@ -1,6 +1,7 @@
 package de.neuefische.springserver.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ public class Order {
 
     @NotBlank(message="Id not null!")
     private String id;
-    @NotBlank(message="Who orders nothing???")
+    @Size(min=1)
     private List<Product> products;
 
     public Order(String id, List<Product> products) {
