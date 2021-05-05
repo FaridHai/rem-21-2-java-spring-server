@@ -3,7 +3,6 @@ package de.neuefische.springserver.service;
 import de.neuefische.springserver.model.Product;
 import de.neuefische.springserver.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +13,11 @@ import static com.github.npathai.hamcrestopt.OptionalMatchers.isPresentAndIs;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class ProductServiceTest {
 
-    ProductRepository productRepositoryMock = mock(ProductRepository.class);
+    final ProductRepository productRepositoryMock = mock(ProductRepository.class);
 
     @Test
     void getProductList() {

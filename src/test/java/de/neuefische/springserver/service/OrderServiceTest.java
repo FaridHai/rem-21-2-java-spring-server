@@ -18,8 +18,8 @@ import static org.mockito.Mockito.*;
 
 
 class OrderServiceTest {
-    OrderRepository orderRepoMock = mock(OrderRepository.class);
-    ProductRepository productRepoMock = mock(ProductRepository.class);
+    final OrderRepository orderRepoMock = mock(OrderRepository.class);
+    final ProductRepository productRepoMock = mock(ProductRepository.class);
 
     @Test
     void addOrder() {
