@@ -77,7 +77,7 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void addProductwithExcistingId() {
+    void overwriteProductWithExcistingId() {
         //GIVEN
         ProductRepository repository = new ProductRepository();
         repository.addProduct(new Product("Honey", "1"));
