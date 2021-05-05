@@ -12,9 +12,9 @@
     <artifactId>spring-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-server</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring Server</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>15</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -26,6 +26,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
     </dependencies>
 
