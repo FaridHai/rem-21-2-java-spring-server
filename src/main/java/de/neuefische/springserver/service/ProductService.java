@@ -39,4 +39,8 @@ public class ProductService {
     public Product updateProduct(Product product) {
         return this.productRepository.addProduct(product);
     }
+
+    public List<Product> getProductsByName(String name) {
+        return productRepository.getProductsByName(name);
+    }
 }

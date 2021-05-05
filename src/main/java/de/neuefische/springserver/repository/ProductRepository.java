@@ -3,10 +3,7 @@ package de.neuefische.springserver.repository;
 import de.neuefische.springserver.model.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 public class ProductRepository {
@@ -24,5 +21,15 @@ public class ProductRepository {
     public Product addProduct(Product product){
         productRepo.put(product.getId(), product);
         return product;
+    }
+
+    public List<Product> getProductsByName(String name) {
+        List<Product> products = new ArrayList<>();
+        for (Product product : productRepo.values()) {
+            if(product.getName().toLowerCase().contains(name.toLowerCase())) {
+                products.add(product);
+            }
+        }
+        return products;
     }
 }

@@ -23,7 +23,10 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getProductList(){
+    public List<Product> getProductList(@RequestParam Optional<String> search){
+        if (search.isPresent()) {
+            return productService.getProductsByName(search.get());
+        }
         return productService.getProductList();
     }
 
@@ -54,7 +57,4 @@ public class ProductController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product does not exist");
         }
     }
-
-
-
 }
