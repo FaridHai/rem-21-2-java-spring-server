@@ -75,4 +75,26 @@ class ProductRepositoryTest {
                 new Product("Banana", "4"),
                 new Product("Apple", "5")));
     }
+
+    @Test
+    void addProductwithExcistingId() {
+        //GIVEN
+        ProductRepository repository = new ProductRepository();
+        repository.addProduct(new Product("Honey", "1"));
+        repository.addProduct(new Product("Jam", "2"));
+        repository.addProduct(new Product("Nutella", "3"));
+        repository.addProduct(new Product("Banana", "4"));
+        repository.addProduct(new Product("Apple", "5"));
+
+        //WHEN
+        repository.addProduct(new Product("Watermelon", "5"));
+
+        //THEN
+        assertThat(repository.getProductList(), containsInAnyOrder(
+                new Product("Honey", "1"),
+                new Product("Jam", "2"),
+                new Product("Nutella", "3"),
+                new Product("Banana", "4"),
+                new Product("Watermelon", "5")));
+    }
 }
