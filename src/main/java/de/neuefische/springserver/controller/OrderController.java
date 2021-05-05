@@ -43,7 +43,11 @@ public class OrderController {
         if (!id.equals(order.getId())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "id not valid");
         }
-        return orderService.addOrder(order);
+        Optional<Order> optionalOrder = orderService.addOrder(order);
+        if (optionalOrder.isPresent()) {
+            return optionalOrder.get();
+        }
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Any product not available");
     }
 
     @DeleteMapping("{id}")
