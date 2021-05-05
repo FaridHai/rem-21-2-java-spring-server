@@ -39,7 +39,10 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public Product updateProduct(@Valid @RequestBody Product product){
+    public Product updateProduct(@PathVariable String id, @Valid @RequestBody Product product){
+        if (!id.equals(product.getId())){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id not valid");
+        }
         return productService.updateProduct(product);
     }
 
