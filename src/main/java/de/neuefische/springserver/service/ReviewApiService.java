@@ -14,11 +14,12 @@ import java.util.*;
 public class ReviewApiService {
     private final String reviewApiUrl = "https://jsonplaceholder.typicode.com/comments";
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private final ProductService productService;
 
     @Autowired
-    public ReviewApiService(ProductService productService) {
+    public ReviewApiService(ProductService productService, RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
         this.productService = productService;
     }
 
