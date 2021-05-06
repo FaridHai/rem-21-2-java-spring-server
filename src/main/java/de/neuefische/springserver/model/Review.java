@@ -13,14 +13,12 @@ public class Review {
     private String id;
 
     @NotBlank(message = "enter a title")
-    @JsonProperty("name")
     private String title;
 
     private String email;
 
     @NotBlank(message = "write your review!!!!")
     @Size(min=10, message = "Your review is not long enough!")
-    @JsonProperty("body")
     private String content;
 
 
