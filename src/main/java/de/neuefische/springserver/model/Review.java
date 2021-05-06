@@ -67,12 +67,12 @@ public class Review {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Review review = (Review) o;
-        return Objects.equals(product, review.product) && Objects.equals(id, review.id) && Objects.equals(title, review.title) && Objects.equals(email, review.email) && Objects.equals(content, review.content);
+        return Objects.equals(id, review.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(product, id, title, email, content);
+        return Objects.hash(id);
     }
 
     @Override

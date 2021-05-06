@@ -12,6 +12,10 @@ public class Product {
     @NotBlank(message="Id not null!")
     private String id;
 
+    public Product() {
+
+    }
+
     public Product(String name, String id) {
         this.name = name;
         this.id = id;
